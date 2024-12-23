@@ -1,6 +1,7 @@
 package ca.letkeman.contact.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -46,7 +47,7 @@ public class Address {
   @Column(name = "email")
   private String email;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
   @JoinColumn(name = "contact_id")
   @JsonBackReference
   private Contact contact;

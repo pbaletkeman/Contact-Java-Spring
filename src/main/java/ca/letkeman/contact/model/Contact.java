@@ -30,7 +30,7 @@ public class Contact {
   private String middleName;
 
   @OneToMany(
-      fetch = FetchType.LAZY,
+      fetch = FetchType.EAGER,
       mappedBy = "contact",
       cascade = CascadeType.ALL
   )
